@@ -1,0 +1,13 @@
+version: "3.7"
+
+services: 
+
+  github-runner:
+    build: .
+    hostname: github-runner
+    container_name: github-runner
+    restart: always
+    environment: 
+      GITHUB_OWNER: ${user}
+      GITHUB_REPOSITORY: ${repo}
+      GITHUB_PAT: ${token}
